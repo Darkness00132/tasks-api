@@ -22,7 +22,7 @@ router.post("/tasks", async (req, res) => {
     description,
   });
 
-  res.status(200).json({ task });
+  res.status(201).json({ task });
 });
 
 router.put("/tasks/:id", async (req, res) => {

@@ -17,6 +17,7 @@ Task.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     title: {
@@ -26,7 +27,7 @@ Task.init(
       type: DataTypes.STRING,
     },
   },
-  { sequelize }
+  { sequelize, tableName: "tasks", timestamps: true }
 );
 
 export default Task;

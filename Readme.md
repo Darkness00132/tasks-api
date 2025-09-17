@@ -1,93 +1,69 @@
-Tasks API
+Got it ✅ you already exported `postman_collection.json`, so in the README we’ll just **tell them how to use it** (import into Postman/Insomnia) and mention that it contains all endpoints.
+Here’s the updated **final README**:
 
-A simple CRUD API for managing tasks using Express.js, Sequelize, and PostgreSQL.
+```markdown
+# Tasks API
 
-🚀 Getting Started
+Simple CRUD API for tasks using **Express.js**, **Sequelize**, and **PostgreSQL**.
 
-1. Clone the repo
-   git clone https://github.com/Darkness00132/tasks-api
-   cd tasks-api
+---
 
-2. Install dependencies
-   npm install
+## 🚀 Setup
 
-3. Setup environment variables
+1. Get a PostgreSQL connection URL (example: `postgres://username:password@localhost:5432/tasksdb`)
+2. Create a `.env` file in the project root:
+```
 
-Create a .env file in the project root with:
-
-DATABASE_URL=postgres://username:password@localhost:5432/tasksdb
+SQL_URL=your_postgres_url
 PORT=5000
 
-4. Start the server
-   npm start
+````
+3. Install dependencies and start the server:
+```bash
+npm install
+npm start
+````
 
-Server runs at:
+Server runs at: `http://localhost:5000`
 
-http://localhost:5000
+---
 
-📌 API Endpoints
-Create Task
+## 📌 Endpoints
 
-POST /tasks
-Body:
+- **GET /tasks** → list all tasks
+- **GET /tasks/\:id** → get task by id
+- **POST /tasks** → create task
 
-{
-"title": "My first task",
-"description": "This is a sample task"
-}
+  ```json
+  {
+    "title": "My Task",
+    "description": "Some description"
+  }
+  ```
 
-Get All Tasks
+- **PUT /tasks/\:id** → update task
+- **DELETE /tasks/\:id** → delete task
 
-GET /tasks
+---
 
-Get Task by ID
+## 🧪 Postman Collection
 
-GET /tasks/:id
+A Postman collection is included in the project root:
+👉 [postman_collection.json](./postman_collection.json)
 
-Update Task
+### How to use:
 
-PUT /tasks/:id
-Body:
+1. Open **Postman** (or **Insomnia**)
+2. Click **Import**
+3. Select the file `postman_collection.json` from the project root
+4. All endpoints will be available and ready to test
 
-{
-"title": "Updated Task",
-"description": "Updated description"
-}
+---
 
-Delete Task
+## 📂 Repository
 
-DELETE /tasks/:id
+GitHub: [https://github.com/Darkness00132/tasks-api](https://github.com/Darkness00132/tasks-api)
 
-🧪 Example with cURL
+## video url
 
-# Create
-
-curl -X POST http://localhost:5000/tasks \
- -H "Content-Type: application/json" \
- -d '{"title":"Test Task","description":"Hello"}'
-
-# List
-
-curl http://localhost:5000/tasks
-
-# Update
-
-curl -X PUT http://localhost:5000/tasks/1 \
- -H "Content-Type: application/json" \
- -d '{"title":"Updated Task"}'
-
-# Delete
-
-curl -X DELETE http://localhost:5000/tasks/1
-
-📂 Postman Collection
-
-Import tasks-api.postman_collection.json into Postman or Insomnia to test all endpoints.
-
-🎥 Demo Video
-
-Record a short video showing:
-
-Running the server.
-
-Testing endpoints with Postman or curl.
+https://drive.google.com/file/d/11WEXfIm-CRIbYKM1WO__LuM9i-RCbbyl/view?usp=sharing

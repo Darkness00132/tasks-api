@@ -17,7 +17,7 @@ router.post("/tasks", async (req, res) => {
         title,
         description,
     });
-    res.status(200).json({ task });
+    res.status(201).json({ task });
 });
 router.put("/tasks/:id", async (req, res) => {
     const task = await Task.findByPk(req.params.id);

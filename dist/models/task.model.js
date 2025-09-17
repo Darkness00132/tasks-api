@@ -5,6 +5,7 @@ class Task extends Model {
 Task.init({
     id: {
         type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
     },
     title: {
@@ -13,6 +14,6 @@ Task.init({
     description: {
         type: DataTypes.STRING,
     },
-}, { sequelize });
+}, { sequelize, tableName: "tasks", timestamps: true });
 export default Task;
 //# sourceMappingURL=task.model.js.map
